@@ -1,0 +1,58 @@
+name: Step 4, Configure Notification Preferences
+
+# This step triggers when a comment containing "notifications-configured" is posted on an issue
+# This workflow updates from step 4 to step 5
+
+on:
+  workflow_dispatch:
+  issue_comment:
+    types:
+      - created
+
+permissions:
+  # Need `contents: read` to checkout the repository
+  # Need `contents: write` to update the step metadata
+  contents: write
+
+jobs:
+  # Get the current step to only run the main job when the learner is on the same step
+  get_current_step:
+    name: Check current step number
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - id: get_step
+        run: |
+          echo "current_step=$(cat ./.github/steps/-step.txt)" >> $GITHUB_OUTPUT
+    outputs:
+      current_step: ${{ steps.get_step.outputs.current_step }}
+
+  on_notifications_configured_comment:
+    name: On notifications-configured comment
+    needs: get_current_step
+
+    # We will only run this action when:
+    # 1. This repository isn't the template repository
+    # 2. The step is currently 4
+    # 3. The comment contains "notifications-configured"
+    if: >-
+      ${{ !github.event.repository.is_template
+          && needs.get_current_step.outputs.current_step == 4
+          && contains(github.event.comment.body, 'notifications-configured') }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Let's get all the branches
+
+      # Update to step 5
+      - name: Update to step 5
+        uses: skills/action-update-step@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          from_step: 4
+          to_step: 5
