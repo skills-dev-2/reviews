@@ -1,17 +1,17 @@
-name: Step 2, Create Custom Filters and Views
-
-# This step triggers when a comment is created on an issue
-# This workflow updates from step 2 to step 3
+name: Step 2, Write Effective Release Notes
 
 on:
+  release:
+    types: [created, edited]
   workflow_dispatch:
+  push:
+    paths:
+      - 'RELEASE_TEMPLATE.md'
   issue_comment:
-    types:
-      - created
+    types: [created]
 
 permissions:
   contents: write
-  issues: write  # Needed to create milestones
 
 jobs:
   get_current_step:
@@ -26,18 +26,15 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_filters_created_comment:
-    name: On filters-created comment
+  on_template_created:
+    name: On template created
     needs: get_current_step
-
-    # Run only if:
-    # 1. This repository isn't a template
-    # 2. The step is currently 2
-    # 3. The comment contains "filters-created"
     if: >-
       ${{ !github.event.repository.is_template
           && needs.get_current_step.outputs.current_step == 2
-          && contains(github.event.comment.body, 'filters-created') }}
+          && (github.event_name == 'release' && (github.event.action == 'created' || github.event.action == 'edited')
+              || github.event_name == 'push' && contains(github.event.head_commit.modified, 'RELEASE_TEMPLATE.md')
+              || contains(github.event.comment.body, 'template-created')) }}
 
     runs-on: ubuntu-latest
 
@@ -47,16 +44,24 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create milestone using REST API
+      - name: Add new feature to sample app
         run: |
-          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-               -H "Accept: application/vnd.github+json" \
-               https://api.github.com/repos/${{ github.repository }}/milestones \
-               -d '{
-                 "title": "Version 1.0",
-                 "state": "open",
-                 "description": "Our first release milestone"
-               }'
+          cat >> src/app.js << 'EOF'
+          
+          // New feature added for v1.1.0
+          function power(a, b) {
+            return Math.pow(a, b);
+          }
+          
+          // Export the new function
+          module.exports.power = power;
+          EOF
+          
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          git add src/app.js
+          git commit -m "Add power function for v1.1.0 release"
+          git push origin main
 
       - name: Update to step 3
         uses: skills/action-update-step@v2
@@ -64,4 +69,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           from_step: 2
           to_step: 3
+
 
