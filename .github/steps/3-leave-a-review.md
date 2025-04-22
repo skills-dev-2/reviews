@@ -1,22 +1,21 @@
-## Step 3: Manage Issue Subscriptions
+## Step 3: Attach Assets to Releases
 
-Staying informed about issues you care about is crucial for effective collaboration.
+Releases can include binaries, documentation, and other files for users to download.
 
-### 👀 Subscription Levels
+### 📎 Types of Release Assets
 
-GitHub offers different ways to follow issues:
+Common assets to include with releases:
+- Compiled binaries or packages
+- Documentation (PDFs, guides)
+- Configuration examples
+- Migration scripts
 
-- **Participating**: You'll be notified of any activity on issues where you've participated
-- **Watching**: You'll be notified of all activity on a repository
-- **Custom**: You can subscribe to specific issues without watching the entire repository
+### :keyboard: Task: Add Documentation to a Release
 
-### :keyboard: Task: Set Up Subscriptions
-
-1. Open an issue in your repository
-2. Look for the "Subscribe" button in the right sidebar
-3. Click it to subscribe to updates for this specific issue
-4. Visit another issue and unsubscribe if you're automatically subscribed
-5. Comment "subscribed" when complete
-
----
+1. Create a simple PDF or text file named `user-guide.pdf` or `user-guide.txt`
+2. Draft a new release with tag `v1.2.0`
+3. Drag and drop your documentation file into the "Attach binaries" section
+4. Add notes explaining what the documentation covers
+5. Publish the release
+6. Comment "assets-attached" when complete
 
