@@ -1,22 +1,51 @@
-## Step 2: Create Custom Filters and Views
+## Step 2: Write Effective Release Notes
 
-Custom filters allow you to save frequent searches for easy access later. Let's create a set of useful filters.
+Good release notes help users understand what changed and why it matters. Let's create a template for consistent release notes.
 
-### 🔍 Creating Saved Searches
+### 📋 Release Notes Best Practices
 
-Saved searches appear in your issues sidebar for quick access:
+Effective release notes typically include:
 
-1. After performing a search, look for the "Save search" option
-2. Name your search something descriptive
-3. Access saved searches from the sidebar on the Issues page
+- Version number and release date
+- Summary of key changes
+- Detailed list of features, improvements, and bug fixes
+- Breaking changes and migration notes
+- Contributors acknowledgment
+- Links to documentation
 
-### :keyboard: Task: Create Multiple Custom Filters
+### :keyboard: Task: Create a Release Notes Template
 
-Create the following saved searches:
+1. Create a new file in your repository named `RELEASE_TEMPLATE.md`
+2. Add the following template:
+   ```markdown
+   # Release v[VERSION]
 
-1. `is:open is:issue sort:updated-desc` - Recently updated issues
-2. `is:open is:issue assignee:@me milestone:current` - Your tasks for the current milestone
-3. `is:open is:issue label:help-wanted` - Open issues seeking help
-4. Comment "filters-created" when you've created all three saved searches
+   ## Summary
+   [Brief description of this release's focus]
 
----
+   ## New Features
+   - [Feature 1]
+   - [Feature 2]
+
+   ## Improvements
+   - [Improvement 1]
+   - [Improvement 2]
+
+   ## Bug Fixes
+   - [Fix 1]
+   - [Fix 2]
+
+   ## Breaking Changes
+   - [Breaking change 1]
+   - [Breaking change 2]
+
+   ## Contributors
+   Thanks to the following people who contributed to this release:
+   - [Contributor 1]
+   - [Contributor 2]
+
+   ## Documentation
+   [Links to relevant documentation]
+   ```
+3. Commit this template to your repository
+4. Comment "template-created" when complete
