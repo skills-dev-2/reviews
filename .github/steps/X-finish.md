@@ -1,20 +1,21 @@
 ## Finish
 
-_Congratulations on completing this course on GitHub Issue Search and Notifications!_
+_Congratulations on completing this course on GitHub Releases!_
 
-<img src=https://octodex.github.com/images/collabocats.jpg alt=celebrate width=300 align=right>
+<img src=https://octodex.github.com/images/constructocat2.jpg alt=celebrate width=300 align=right>
 
-By mastering these tools, you've significantly improved your ability to:
-- Quickly find the issues that matter to you
-- Stay updated on important changes without being overwhelmed
-- Navigate GitHub more efficiently using keyboard shortcuts
-- Create custom workflows that match your team's needs
+By mastering GitHub Releases, you've learned to:
+- Create professional software releases
+- Write helpful and consistent release notes
+- Use semantic versioning to communicate change impact
+- Attach documentation and other assets to releases
+- Automate parts of the release process
 
 ### What's next?
 
-- Try creating project boards to organize your issues visually
-- Explore GitHub Actions for automating issue management
-- Set up team-level notification rules if you're working in a team
-- We'd love to hear what you thought of this course [in our discussion board](https://github.com/orgs/skills/discussions/categories/issue-management)
+- Try creating releases through the GitHub CLI
+- Set up workflows to automatically build and test before releasing
+- Create a GitHub Pages site to showcase your releases
+- We'd love to hear what you thought of this course [in our discussion board](https://github.com/orgs/skills/discussions)
 - [Take another GitHub Skills course](https://github.com/skills)
-- [Read the GitHub documentation on search syntax](https://docs.github.com/en/github/searching-for-information-on-github/searching-on-github/searching-issues-and-pull-requests)
+- [Read the GitHub documentation on releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
