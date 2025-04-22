@@ -17,5 +17,4 @@ Common assets to include with releases:
 3. Drag and drop your documentation file into the "Attach binaries" section
 4. Add notes explaining what the documentation covers
 5. Publish the release
-6. Comment "assets-attached" when complete
 
