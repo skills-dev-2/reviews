@@ -13,41 +13,38 @@ _Take control of your workflow with powerful search filters, saved queries, and 
 
 </header>
 
-<!--
-  <<< Author notes: Course start >>>
-  Include start button, a note about Actions minutes,
-  and tell the learner why they should take the course.
--->
+# Step 1: Master Basic Search Syntax
+GitHub's issue search is powerful but only if you know how to use it. Let's learn the essential search operators.
 
-## Welcome
+## 📝 Core Search Operators
+Search operators help you narrow down exactly what you're looking for:
 
-In today's fast-paced development environments, finding the right information quickly is essential. This course builds on basic GitHub Issues knowledge to help you master search filters, notification management, and workflow optimization.
+- `is:issue` - Find only issues (not pull requests)
+- `is:open` or `is:closed` - Filter by status
+- `repo:username/repository` - Search within a specific repository
+- `label:bug` - Find issues with specific labels
+- `assignee:username` - Find issues assigned to specific users
+- `author:username` - Find issues created by specific users
+- `mentions:username` - Find issues that mention specific users
+- `milestone:"Version 1.0"` - Find issues within a specific milestone
+- `created:>2023-01-01` - Find issues created after a certain date
+- `updated:<2023-01-01` - Find issues updated before a certain date
+- `no:assignee` - Find issues with no assignee
+- `no:label` - Find issues with no labels
 
-- **Who is this for**: Developers, project managers, and team leads working with GitHub repositories.
-- **What you'll learn**: Advanced issue searching, filter creation, notification management, and subscription strategies.
-- **What you'll build**: A personalized system of saved searches and notification preferences.
-- **Prerequisites**: Basic familiarity with GitHub Issues.
-- **How long**: 20-30 minutes.
+## :keyboard: Task: Create an Issue
 
-### In this course, you'll learn how to:
+1. Navigate to the Issues tab in your repository
+2. Click on create new Issue
+3. Make sure to label to issue as a bug and assign it to yourself
 
-1. Use GitHub's powerful search syntax to find specific issues
-2. Create and save custom filters for frequent searches
-3. Subscribe to issues and manage notification preferences
-4. Set up watched repositories and custom notification rules
-5. Use keyboard shortcuts to navigate issues efficiently
+## :keyboard: Task: Create Your First Advanced Search
 
----
-
-### 🚀 How to start this course
-
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=claudiaangel17&template_name=IssuesThree&owner=%40me&name=github-issue-search&description=Learning+GitHub+Issue+search+and+notifications&visibility=public)
-
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, follow the prompts to create a new repository.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository—private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+1. Navigate to the Issues tab in your repository
+2. Click on the search bar at the top of the Issues page
+3. Type `is:open label:bug assignee:@me` and press Enter
+4. Click the "Save search" option that appears and name it "My Open Bugs"
+5. Comment "search-created" on this issue when complete
 
 <footer>
 
