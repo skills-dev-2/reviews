@@ -1,14 +1,9 @@
 name: Step 2, Write Effective Release Notes
 
 on:
-  release:
-    types: [created, edited]
-  workflow_dispatch:
   push:
     paths:
       - 'RELEASE_TEMPLATE.md'
-  issue_comment:
-    types: [created]
 
 permissions:
   contents: write
@@ -29,13 +24,7 @@ jobs:
   on_template_created:
     name: On template created
     needs: get_current_step
-    if: >-
-      ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 2
-          && (github.event_name == 'release' && (github.event.action == 'created' || github.event.action == 'edited')
-              || github.event_name == 'push' && contains(github.event.head_commit.modified, 'RELEASE_TEMPLATE.md')
-              || contains(github.event.comment.body, 'template-created')) }}
-
+    if: ${{ !github.event.repository.is_template && needs.get_current_step.outputs.current_step == 2 }}
     runs-on: ubuntu-latest
 
     steps:
