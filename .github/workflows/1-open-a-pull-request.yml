@@ -1,17 +1,11 @@
-name: Step 1, Master Basic Search Syntax
-
-# This step triggers when any comment is created on an issue
-# This workflow updates from step 1 to step 2
+name: Step 1, Create Your First Release
 
 on:
-  workflow_dispatch:
-  issue_comment:
-    types:
-      - created
+  release:
+    types: [published, prereleased]
 
 permissions:
   contents: write
-  issues: write  # Needed to create issues via REST API
 
 jobs:
   get_current_step:
@@ -26,16 +20,13 @@ jobs:
     outputs:
       current_step: ${{ steps.get_step.outputs.current_step }}
 
-  on_any_comment_created:
-    name: On any issue comment
+  on_release:
+    name: On release
     needs: get_current_step
-
-    # Run only if:
-    # 1. This repository isn't a template
-    # 2. The step is currently 1
     if: >-
       ${{ !github.event.repository.is_template
-          && needs.get_current_step.outputs.current_step == 1 }}
+          && needs.get_current_step.outputs.current_step == 1
+          && (github.event_name == 'release') }}
 
     runs-on: ubuntu-latest
 
@@ -45,23 +36,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create sample issues using REST API
-        run: |
-          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-               -H "Accept: application/vnd.github+json" \
-               https://api.github.com/repos/${{ github.repository }}/issues \
-               -d '{"title":"Bug: Navigation breaks on mobile","body":"When using the app on mobile devices, the navigation menu doesn’t work properly.","labels":["bug"]}'
-
-          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-               -H "Accept: application/vnd.github+json" \
-               https://api.github.com/repos/${{ github.repository }}/issues \
-               -d '{"title":"Feature request: Dark mode","body":"Would be great to have a dark mode option for the interface.","labels":["enhancement"]}'
-
-          curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-               -H "Accept: application/vnd.github+json" \
-               https://api.github.com/repos/${{ github.repository }}/issues \
-               -d '{"title":"Documentation needs updating","body":"The API documentation is outdated and needs to be updated.","labels":["documentation"]}'
-      
       - name: Update to step 2
         uses: skills/action-update-step@v2
         with:
