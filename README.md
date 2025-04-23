@@ -1,32 +1,26 @@
-# Finding Your Way with GitHub Releases
+# 📌 Pinning Important Threads & Responses
 
-Learn to create, manage, and distribute software using GitHub's powerful release tools.
+Learn how to elevate essential information and improve team collaboration using GitHub Discussions' pinning features.
 
 ## Welcome
-Effective release management is crucial for software projects of all sizes. This course will guide you through GitHub's release features, helping you create professional software releases with custom release notes, attached documentation, and automated workflows.
 
-### Who is this for:
-- Developers, project maintainers, and team leads working with GitHub repositories.
+Effective communication in open-source and team-driven projects often depends on how well key information is surfaced. GitHub Discussions provides a space for structured conversations—but without the ability to highlight critical threads or responses, important decisions and solutions can get buried.
 
-### What you'll learn:
-- Creating releases
-- Writing effective release notes
-- Attaching binaries and documentation
-- Automating the release process
+This skill will walk you through how to create a discussion, pin full threads, and highlight individual responses. You'll learn how pinning supports better project organization, knowledge retention, and team transparency—especially in fast-moving repositories. By the end, you’ll know when and how to use pinning to make your Discussions more valuable for everyone.
 
-### What you'll build:
-A series of professional releases for your project.
+## Who is this for:
 
-### Prerequisites:
-- Basic familiarity with GitHub repositories and Git.
+- New and experienced contributors using GitHub Discussions  
+- Community managers, team leads, and non-technical collaborators  
+- Anyone looking to streamline communication in open-source or internal projects
 
-### How long:
-15-20 minutes.
+## What you'll learn:
 
-## In this course, you'll learn how to:
-- Create draft and published releases through GitHub's interface
-- Write clear and effective release notes using templates and Markdown
-- Attach binaries and documentation to releases
+- How to create a new GitHub Discussion  
+- How to pin entire threads for visibility  
+- How to mark specific replies as answers (and why that matters)  
+- Best practices for keeping pinned content clean and useful
+  
 ---
 
 ### 🚀 How to start this course
