@@ -1,8 +1,8 @@
-## Step 3: Attach Assets to Releases
+## Step 3: Attach assets to releases
 
 Releases can include binaries, documentation, and other files for users to download.
 
-### 📎 Types of Release Assets
+### 📎 Types of release assets
 
 Common assets to include with releases:
 - Compiled binaries or packages
@@ -10,7 +10,7 @@ Common assets to include with releases:
 - Configuration examples
 - Migration scripts
 
-### :keyboard: Task: Add Documentation to a Release
+### :keyboard: Task: Add documentation to a release
 
 1. Create a simple PDF or text file named `user-guide.pdf` or `user-guide.txt`
 2. Draft a new release with tag `v1.2.0`
