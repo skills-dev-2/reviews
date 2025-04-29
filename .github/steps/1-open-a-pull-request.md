@@ -1,4 +1,4 @@
-# Step 1: Create Your First Release
+# Step 1: Create your first Release
 
 GitHub Releases let you package and provide software to your users based on specific Git tags. Let's create our first release.
 
@@ -10,11 +10,11 @@ A GitHub Release is:
 - An opportunity to create release notes to explain changes
 - A place to attach binaries, documentation, and other assets
 
-## :keyboard: Task: Create a Draft Release
+## :keyboard: Task: Create a draft Release
 
-1. Navigate to the "Releases" section in your repository (click "Code" tab > "Releases" in the right sidebar)
-2. Click "Draft a new release"
-3. In the "Choose a tag" field, type `v1.0.0` (this will create a new tag)
+1. Navigate to the **Releases** section in your repository (click **Code** tab > **Releases** in the right sidebar)
+2. Click **Draft a new release**
+3. In the **Choose a tag** field, type `v1.0.0` (this will create a new tag)
 4. Title your release "First Release"
 5. In the description, add:
    ```
