@@ -1,8 +1,8 @@
-## Step 2: Write Effective Release Notes
+## Step 2: Write effective release notes
 
 Good release notes help users understand what changed and why it matters. Let's create a template for consistent release notes.
 
-### 📋 Release Notes Best Practices
+### 📋 Release notes best practices
 
 Effective release notes typically include:
 
